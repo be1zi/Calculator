@@ -42,9 +42,9 @@ public class MainScreenViewModel {
     //
     
     private func prepareButtonsViewModels() {
-        buttonsViewModels = [MainScreenCollectionViewCellModel(title: "AC", color: UIColor.gray, operation: .clear),
-                             MainScreenCollectionViewCellModel(title: "+/-", color: UIColor.gray, operation: .changeSign),
-                             MainScreenCollectionViewCellModel(title: "%", color: UIColor.gray, operation: .percent),
+        buttonsViewModels = [MainScreenCollectionViewCellModel(title: "AC", color: UIColor.lightGray, operation: .clear),
+                             MainScreenCollectionViewCellModel(title: "+/-", color: UIColor.lightGray, operation: .changeSign),
+                             MainScreenCollectionViewCellModel(title: "%", color: UIColor.lightGray, operation: .percent),
                              MainScreenCollectionViewCellModel(title: "/", color: UIColor.orange, operation: .divide),
                              MainScreenCollectionViewCellModel(title: "7", color: UIColor.darkGray, numericValue: 7),
                              MainScreenCollectionViewCellModel(title: "8", color: UIColor.darkGray, numericValue: 8),

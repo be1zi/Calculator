@@ -15,7 +15,8 @@ public class MainScreenViewController: UIViewController {
     
     @IBOutlet weak var totalValueLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    
     private var viewModel: MainScreenViewModel = MainScreenViewModel()
     
     //
@@ -27,6 +28,15 @@ public class MainScreenViewController: UIViewController {
         
         registerCell()
         configurateCollectionView()
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let height = collectionView.collectionViewLayout.collectionViewContentSize.height + collectionView.contentInset.bottom + collectionView.contentInset.top
+        collectionViewHeightConstraint.constant = height
+        
+        self.view.layoutIfNeeded()
     }
     
     //

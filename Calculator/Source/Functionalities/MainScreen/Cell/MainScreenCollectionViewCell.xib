@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="WH4-jq-uO3" customClass="MainScreenCollectionViewCell" customModule="Calculator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="243"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Qkm-Ja-2ez">
+                <rect key="frame" x="0.0" y="0.0" width="379" height="243"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcQ-Yz-xJU">
+                        <rect key="frame" x="0.0" y="0.0" width="379" height="243"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-7f-4yi">
+                                <rect key="frame" x="0.0" y="0.0" width="379" height="243"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Puh-7f-4yi" secondAttribute="trailing" id="aLv-s9-5xB"/>
+                            <constraint firstItem="Puh-7f-4yi" firstAttribute="top" secondItem="AcQ-Yz-xJU" secondAttribute="top" id="f3Y-01-hko"/>
+                            <constraint firstItem="Puh-7f-4yi" firstAttribute="leading" secondItem="AcQ-Yz-xJU" secondAttribute="leading" id="fem-xa-H7y"/>
+                            <constraint firstAttribute="bottom" secondItem="Puh-7f-4yi" secondAttribute="bottom" id="zCX-J1-GkV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="AcQ-Yz-xJU" secondAttribute="bottom" id="NgZ-Lh-tuQ"/>
+                    <constraint firstItem="AcQ-Yz-xJU" firstAttribute="top" secondItem="Qkm-Ja-2ez" secondAttribute="top" id="Yms-DT-Fej"/>
+                    <constraint firstAttribute="trailing" secondItem="AcQ-Yz-xJU" secondAttribute="trailing" id="jlJ-cJ-R5p"/>
+                    <constraint firstItem="AcQ-Yz-xJU" firstAttribute="leading" secondItem="Qkm-Ja-2ez" secondAttribute="leading" id="wRQ-UP-mp2"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="379" height="243"/>
+            <connections>
+                <outlet property="button" destination="Puh-7f-4yi" id="mvi-Xm-Cb6"/>
+            </connections>
+            <point key="canvasLocation" x="-680" y="37"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

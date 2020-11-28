@@ -16,7 +16,7 @@ public class MainScreenViewController: UIViewController {
     @IBOutlet weak var totalValueLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    private var viewModel: MainScreenViewModel?
+    private var viewModel: MainScreenViewModel = MainScreenViewModel()
     
     //
     // MARK: - Lifecycle
@@ -25,25 +25,50 @@ public class MainScreenViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewModel = MainScreenViewModel()
+        registerCell()
+        configurateCollectionView()
+    }
+    
+    //
+    // MARK: - Method
+    //
+    
+    private func configurateCollectionView() {
+        
+        let layout = UICollectionViewFlowLayout()
+        collectionView.setCollectionViewLayout(layout, animated: true)
+    }
+    
+    private func registerCell() {
+        let nibName = String(describing: MainScreenCollectionViewCell.self)
+        collectionView.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: nibName)
     }
 }
 
 extension MainScreenViewController: UICollectionViewDataSource {
    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.buttonsViewModels.count ?? 0
+        return viewModel.buttonsViewModels.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel?.cellName ?? "", for: indexPath) as? MainScreenTableViewCell,
-              let _ = viewModel?.buttonsViewModels.indices.contains(indexPath.row) else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainScreenCollectionViewCell", for: indexPath) as? MainScreenCollectionViewCell,
+              viewModel.buttonsViewModels.indices.contains(indexPath.row) else {
             return UICollectionViewCell()
         }
         
-        cell.model = viewModel?.buttonsViewModels[indexPath.row]
+        cell.model = viewModel.buttonsViewModels[indexPath.row]
         
         return cell
+    }
+}
+
+extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = (UIScreen.main.bounds.width - 5 * 16.0) / 4.0
+
+        return CGSize(width: size, height: size)
     }
 }

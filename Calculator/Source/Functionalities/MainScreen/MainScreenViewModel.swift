@@ -26,8 +26,8 @@ public class MainScreenViewModel {
     // MARK: - Properties
     //
     
-    public private(set) var cellName = String(describing: MainScreenTableViewCell.self)
-    public private(set) var buttonsViewModels = [MainScreenTableViewCellModel]()
+    public private(set) var cellName = String(describing: MainScreenCollectionViewCell.self)
+    public private(set) var buttonsViewModels = [MainScreenCollectionViewCellModel]()
 
     //
     // MARK: - Init
@@ -42,24 +42,28 @@ public class MainScreenViewModel {
     //
     
     private func prepareButtonsViewModels() {
-        buttonsViewModels = [MainScreenTableViewCellModel(title: "AC", color: UIColor.gray, operation: .clear),
-                             MainScreenTableViewCellModel(title: "+/-", color: UIColor.gray, operation: .changeSign),
-                             MainScreenTableViewCellModel(title: "%", color: UIColor.gray, operation: .percent),
-                             MainScreenTableViewCellModel(title: "%", color: UIColor.orange, operation: .divide),
-                             MainScreenTableViewCellModel(title: "7", color: UIColor.darkGray, numericValue: 7),
-                             MainScreenTableViewCellModel(title: "8", color: UIColor.darkGray, numericValue: 8),
-                             MainScreenTableViewCellModel(title: "9", color: UIColor.darkGray, numericValue: 9),
-                             MainScreenTableViewCellModel(title: "X", color: UIColor.darkGray, operation: .multiply),
-                             MainScreenTableViewCellModel(title: "4", color: UIColor.darkGray, numericValue: 4),
-                             MainScreenTableViewCellModel(title: "5", color: UIColor.darkGray, numericValue: 5),
-                             MainScreenTableViewCellModel(title: "6", color: UIColor.darkGray, numericValue: 6),
-                             MainScreenTableViewCellModel(title: "-", color: UIColor.darkGray, operation: .sub),
-                             MainScreenTableViewCellModel(title: "1", color: UIColor.darkGray, numericValue: 1),
-                             MainScreenTableViewCellModel(title: "2", color: UIColor.darkGray, numericValue: 2),
-                             MainScreenTableViewCellModel(title: "3", color: UIColor.darkGray, numericValue: 3),
-                             MainScreenTableViewCellModel(title: "+", color: UIColor.darkGray, operation: .add),
-                             MainScreenTableViewCellModel(title: "0", color: UIColor.darkGray, numericValue: 0),
-                             MainScreenTableViewCellModel(title: ",", color: UIColor.darkGray, operation: .comma),
-                             MainScreenTableViewCellModel(title: "=", color: UIColor.darkGray, operation: .equal)]
+        buttonsViewModels = [MainScreenCollectionViewCellModel(title: "AC", color: UIColor.gray, operation: .clear),
+                             MainScreenCollectionViewCellModel(title: "+/-", color: UIColor.gray, operation: .changeSign),
+                             MainScreenCollectionViewCellModel(title: "%", color: UIColor.gray, operation: .percent),
+                             MainScreenCollectionViewCellModel(title: "%", color: UIColor.orange, operation: .divide),
+                             MainScreenCollectionViewCellModel(title: "7", color: UIColor.darkGray, numericValue: 7),
+                             MainScreenCollectionViewCellModel(title: "8", color: UIColor.darkGray, numericValue: 8),
+                             MainScreenCollectionViewCellModel(title: "9", color: UIColor.darkGray, numericValue: 9),
+                             MainScreenCollectionViewCellModel(title: "X", color: UIColor.darkGray, operation: .multiply),
+                             MainScreenCollectionViewCellModel(title: "4", color: UIColor.darkGray, numericValue: 4),
+                             MainScreenCollectionViewCellModel(title: "5", color: UIColor.darkGray, numericValue: 5),
+                             MainScreenCollectionViewCellModel(title: "6", color: UIColor.darkGray, numericValue: 6),
+                             MainScreenCollectionViewCellModel(title: "-", color: UIColor.darkGray, operation: .sub),
+                             MainScreenCollectionViewCellModel(title: "1", color: UIColor.darkGray, numericValue: 1),
+                             MainScreenCollectionViewCellModel(title: "2", color: UIColor.darkGray, numericValue: 2),
+                             MainScreenCollectionViewCellModel(title: "3", color: UIColor.darkGray, numericValue: 3),
+                             MainScreenCollectionViewCellModel(title: "+", color: UIColor.darkGray, operation: .add),
+                             MainScreenCollectionViewCellModel(title: "0", color: UIColor.darkGray, numericValue: 0),
+                             MainScreenCollectionViewCellModel(title: ",", color: UIColor.darkGray, operation: .comma),
+                             MainScreenCollectionViewCellModel(title: "=", color: UIColor.darkGray, operation: .equal)]
+    }
+    
+    public func buttonDidTapped(model: MainScreenCollectionViewCellModel) {
+        
     }
 }

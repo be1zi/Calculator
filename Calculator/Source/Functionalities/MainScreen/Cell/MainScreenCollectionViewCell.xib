@@ -20,20 +20,19 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcQ-Yz-xJU">
                         <rect key="frame" x="0.0" y="0.0" width="379" height="243"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-7f-4yi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6V-29-6Sz">
                                 <rect key="frame" x="0.0" y="0.0" width="379" height="243"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Puh-7f-4yi" secondAttribute="trailing" id="aLv-s9-5xB"/>
-                            <constraint firstItem="Puh-7f-4yi" firstAttribute="top" secondItem="AcQ-Yz-xJU" secondAttribute="top" id="f3Y-01-hko"/>
-                            <constraint firstItem="Puh-7f-4yi" firstAttribute="leading" secondItem="AcQ-Yz-xJU" secondAttribute="leading" id="fem-xa-H7y"/>
-                            <constraint firstAttribute="bottom" secondItem="Puh-7f-4yi" secondAttribute="bottom" id="zCX-J1-GkV"/>
+                            <constraint firstItem="f6V-29-6Sz" firstAttribute="top" secondItem="AcQ-Yz-xJU" secondAttribute="top" id="4VB-ik-UQb"/>
+                            <constraint firstAttribute="trailing" secondItem="f6V-29-6Sz" secondAttribute="trailing" id="7mN-C6-QDc"/>
+                            <constraint firstItem="f6V-29-6Sz" firstAttribute="leading" secondItem="AcQ-Yz-xJU" secondAttribute="leading" id="Dxc-3P-aGs"/>
+                            <constraint firstAttribute="bottom" secondItem="f6V-29-6Sz" secondAttribute="bottom" id="cu5-8H-d9Q"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -46,7 +45,8 @@
             </collectionViewCellContentView>
             <size key="customSize" width="379" height="243"/>
             <connections>
-                <outlet property="button" destination="Puh-7f-4yi" id="mvi-Xm-Cb6"/>
+                <outlet property="containerView" destination="AcQ-Yz-xJU" id="dGT-03-KgU"/>
+                <outlet property="nameLabel" destination="f6V-29-6Sz" id="748-pK-C3U"/>
             </connections>
             <point key="canvasLocation" x="-680" y="37"/>
         </collectionViewCell>

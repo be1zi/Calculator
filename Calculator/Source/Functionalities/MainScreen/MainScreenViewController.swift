@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 public class MainScreenViewController: UIViewController {
     
@@ -18,6 +19,7 @@ public class MainScreenViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     
     private var viewModel: MainScreenViewModel = MainScreenViewModel()
+    private let disposeBag = DisposeBag()
     
     //
     // MARK: - Lifecycle
@@ -28,6 +30,7 @@ public class MainScreenViewController: UIViewController {
         
         registerCell()
         configurateCollectionView()
+        setupRx()
     }
     
     public override func viewDidLayoutSubviews() {
@@ -58,6 +61,13 @@ public class MainScreenViewController: UIViewController {
     private func getDefaultHeight() -> CGFloat {
         return (UIScreen.main.bounds.width - 2 * Constant.margin - 3 * Constant.collectionViewInteritemSpacing) / 4.0
     }
+    
+    private func setupRx() {
+        
+        viewModel.resultSubject.subscribe(onNext: { [weak self] result in
+            self?.totalValueLabel.text = result
+        }).disposed(by: disposeBag)
+    }
 }
 
 extension MainScreenViewController: UICollectionViewDataSource {
@@ -76,6 +86,13 @@ extension MainScreenViewController: UICollectionViewDataSource {
         cell.model = viewModel.buttonsViewModels[indexPath.row]
         cell.corner = getDefaultHeight() / 2.0
         return cell
+    }
+}
+
+extension MainScreenViewController: UICollectionViewDelegate {
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.buttonDidTapped(at: indexPath)
     }
 }
 

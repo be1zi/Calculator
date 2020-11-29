@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class MainScreenCollectionViewCellModel {
+public struct MainScreenCollectionViewCellModel {
     
     //
     // MARK: - Properties
@@ -29,8 +29,8 @@ public class MainScreenCollectionViewCellModel {
         self.operation = nil
     }
     
-    public init(title: String, color: UIColor, operation: Operations) {
-        self.title = title
+    public init(color: UIColor, operation: Operations) {
+        self.title = operation.rawValue
         self.color = color
         self.numericValue = nil
         self.operation = operation

@@ -13,7 +13,8 @@ public class MainScreenCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     //
     
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     public var model: MainScreenCollectionViewCellModel? {
         didSet {
@@ -29,7 +30,7 @@ public class MainScreenCollectionViewCell: UICollectionViewCell {
         
         guard let viewModel = model else { return }
         
-        button.setTitle(viewModel.title, for: .normal)
-        button.backgroundColor = viewModel.color
+        nameLabel.text = viewModel.title
+        containerView.backgroundColor = viewModel.color
     }
 }
